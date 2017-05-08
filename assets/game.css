@@ -1,17 +1,44 @@
 #viewport {
+  background: url('./background.jpg');
+  width: 1400px;
   margin: auto;
 }
 
 body {
   display: flex;
-  flex-direction: column;
   font-family: sans-serif;
+  flex-direction: column;
+  background: radial-gradient(#4FEDFE, #0C3C7E);
 }
 
 body h1 {
   text-align: center;
   font-size: 34px;
   margin-bottom: 5px;
+  margin-right: 0px;
+}
+
+.info {
+  display: flex;
+}
+
+.footer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+}
+
+.info h1, h3 {
+  align-content: center;
+  color: #49E5FE;
+  margin: 0;
+}
+
+.info h3 {
+  line-height: 2.4;
+  margin-left: 10px;
 }
 
 body h3 {
@@ -21,18 +48,22 @@ body h3 {
 }
 
 .fa {
-  color: black;
-  margin-top: 30px;
-  margin-left: 10px;
+  color: #49E5FE;
+  margin-left: 15px;
 }
 
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 60%;
-  margin: auto;
+a {
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
+
+.links {
+  display: flex;
+  justify-content: flex-end;;
+  align-items: flex-start;
+
+  }
 .modal {
     display: block;
     position: fixed;
@@ -42,20 +73,22 @@ body h3 {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
+    pointer-events: none;
+
 }
 
 .modal-content {
   display: flex;
   flex-direction: column;
-    background-color: #fefefe;
+    background-color: #237AAB;
     margin: 5% auto;
     padding: 20px;
-    border: 1px solid #888;
+    border: 1px solid #237AAB;
     border-radius: 10px;
     width: 30%;
+    color: #49E5FE;
     font-family: sans-serif;
+    pointer-events: all;
 }
 .modal-content h1 {
   text-align: center;
@@ -68,20 +101,29 @@ body h3 {
   text-align: center;
 }
 
+.modal-content ul {
+  margin: auto;
+}
+
+.thumb {
+  width: 100px;
+  margin: auto;
+}
+
 .game-button {
   width: 80%;
   margin: 15px auto;
-  background-color: #42f453;
-  border: 2px solid #42f453;
+  background-color: #A1E077;
+  border: 2px solid #A1E077;
   color: white;
   border-radius: 4px;
   font-size: 20px;
   cursor: pointer;
 }
 
-.game-button {
-  background-color: #35c63c;
-  border-color: #35c63c;
+.game-button:hover {
+  background-color: #8ED063;
+  border-color: #8ED063;
   transition: .2s;
 }
 
