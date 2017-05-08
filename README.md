@@ -1,5 +1,7 @@
 # JS Project: Cytosis
 
+[Live Demo](http://david-janas.com/Cytosis)
+
 ### Background
 
 Cytosis is javascript recreation of the classic Agar.io game. The player
@@ -73,4 +75,4 @@ Goals:
 * Users can change their circles color
 
 ### Bonus Features
-- [ ] Add leaderboard for player scores 
+- [ ] Add leaderboard for player scores
