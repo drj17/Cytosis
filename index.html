@@ -6,7 +6,24 @@
     <link rel="stylesheet" href="./assets/game.css">
   </head>
   <body>
-
+    <div class="modal" id="modal">
+      <div class="modal-content">
+        <h1>Welcome to Cytosis!</h1>
+        <span>How to Play:</span>
+        <ul>
+          <li>Use the arrow keys to move the black circle</li>
+          <li>Avoid circles larger than your own</li>
+          <li>Eat smaller circles to increase your size</li>
+        </ul>
+        <button id="start">Start</button>
+      </div>
+    </div>
+    <div class="modal" id="end-modal">
+      <div class="modal-content">
+        <h2>Game Over!</h2>
+        <button id="restart">Play Again</button>
+      </div>
+    </div>
     <canvas id="viewport"></canvas>
     <script src="lib/bundle.js" charset="utf-8"></script>
 
