@@ -4,8 +4,35 @@
 
 body {
   display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
 }
 
+body h1 {
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 5px;
+}
+
+body h3 {
+  margin: 0;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.fa {
+  color: black;
+  margin-top: 30px;
+  margin-left: 10px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 60%;
+  margin: auto;
+}
 .modal {
     display: block;
     position: fixed;
