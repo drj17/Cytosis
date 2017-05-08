@@ -33,14 +33,17 @@ body {
 .modal-content h1 {
   text-align: center;
 }
+.modal-content h2 {
+  text-align: center;
+}
 .modal-content span {
   display: block;
   text-align: center;
 }
 
-#start {
+.game-button {
   width: 80%;
-  margin: auto;
+  margin: 15px auto;
   background-color: #42f453;
   border: 2px solid #42f453;
   color: white;
@@ -49,7 +52,7 @@ body {
   cursor: pointer;
 }
 
-#start:hover {
+.game-button {
   background-color: #35c63c;
   border-color: #35c63c;
   transition: .2s;
