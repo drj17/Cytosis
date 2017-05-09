@@ -21,6 +21,8 @@ Cytosis uses HTML5 Canvas to draw the game, and vanilla JavaScript to handle the
 
 #### 2D-Rendering
 
+![gamescreen]('http://i.imgur.com/rnFSTjm.jpg')
+
 Cytosis uses Canvas to render the player and enemy sprites.  JavaScript is used
 to handle collision-detection
 
