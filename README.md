@@ -1,78 +1,68 @@
-# JS Project: Cytosis
+# Cytosis
 
 [Live Demo](http://david-janas.com/Cytosis)
 
-### Background
+### About
 
-Cytosis is javascript recreation of the classic Agar.io game. The player
-controls a small circle and can move around the view plane with
-the arrow keys.  The player must consume smaller circles to
+Cytosis is javascript recreation of the classic Feeding Frenzy game. The player
+controls a small bacteria and can move around the view plane with
+the arrow keys.  The player must consume smaller bacteria to
 grow in size while avoiding being eaten by larger ones.  
 
-### Functionality and MVP
+Cytosis uses HTML5 Canvas to draw the game, and vanilla JavaScript to handle the game logic.
 
-In Cytosis users will be able to:
+### How to Play
+- Space to start or restart
+- Arrow keys to move
+- Avoid enemies larger than you while eating enemies smaller than you
+- See how high of a score you can get!
 
-- [ ] Start and pause the game
-- [ ] Choose a color for their circle
-- [ ] Move their circle around the game board with WASD or Arrow keys
-- [ ] See their score
-- [ ] Change game speed
+### Features
 
-This project will also include:
-- [ ] A production README
+#### 2D-Rendering
 
-### Wireframes
+Cytosis uses Canvas to render the player and enemy sprites.  JavaScript is used
+to handle collision-detection
 
-Cytosis will have a single game screen, that is centered upon the users
-circle.  Above the game will be the game name as well as links to my
-GitHub and LinkedIn.  Below the game will be a section for game controls
-and directions.  To the right of the game window will be buttons to allow
-the user to change the game speed as well as the color of their circle.
-To the left of the game screen will be the scoreboard
+```
+collidesWith(player) {
+  const centerDist = dist(this.pos, player.pos);
+  return centerDist < (this.radius + player.radius);
+}
+```
 
-![Wireframe](./wireframes/Cytosis_wireframe.png)
+Both the player and enemies are invulnerable for a few seconds after being
+created, this is accomplished using intervals to conditionally draw the sprites
 
-### Technologies
+```
+blinking() {
+  let startTime = new Date().getTime();
+  let interval = setInterval(() => {
+    if(new Date().getTime() - startTime > 2000){
+      this.shouldDraw = true;
+      clearInterval(interval);
+      return;
+    }
+    this.shouldDraw = !this.shouldDraw;
+  }, 250);
+}
+```
+#### Gameplay
 
-* JavaScript
-* Canvas
+After eating an enemy, the players sprite increases based on the size of
+the enemy.  The enemies radius is then added to the score.
 
-The game logic will be handled with vanilla javascript while the rendering
-will be controlled by Canvas.
+```
+if(circle.collidesWith(this.player) && circle.collidable){
+  let circleRadius = circle.radius;
+  this.player.handleCollision(circle);
+  if (this.player.dead){
+    this.setGameOver();
+  } else if(this.player.collidable) {
+    this.score += Math.round((circleRadius / this.sizeModifier));
+  }
+}
+```
 
-The game will consist of 3 main scripts:
-
-`window.js` will be the main viewport for the game, responsible for rendering the user controlled circle as well as the consumable circles
-
-`cytosis.js` will handle the logic for generating the consumable circles. It will also handle user input and circle collision handlers.
-
-`circle.js` will include the constructor for each Circle object.  Circles will have a size, a direction, and velocity
-
-### Implementation Timeline
-
-#### Day 1
-Setup necessary files and learn how to use Canvas in conjunction with javascript.
-
-Goals:
-* Have viewport finished
-* User controlled circle
-
-#### Day 2
-Create generation logic for consumable circles as well as collision logic
-
-Goals:
-* Consumable circles appear on viewport
-* Consumable circles are either consumed or consume the player upon collision
-
-#### Day 3
-
-Render user scoring as well as selectable color and game speed
-
-Goals:
-* Users can see their score, based on their current size
-* Users can change the speed of the game
-* Users can change their circles color
-
-### Bonus Features
+### Future Features
 - [ ] Add leaderboard for player scores
