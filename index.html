@@ -32,18 +32,21 @@
         <button class="game-button" id="restart">Play Again (Space)</button>
       </div>
     </div>
-    <canvas id="viewport"></canvas>
-    <section class="footer">
-      <div class="info">
-        <h1>Cytosis</h1>
-        <h3>By: David Janas</h3>
-      </div>
-      <div class="links">
-        <a href="http://david-janas.com"><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
-        <a href="http://github.com/drj17/cytosis"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
-        <a href="https://www.linkedin.com/in/david-janas-661325125/"><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></a>
-      </div>
-  </section>
+    <div id="canvas-container">
+      <canvas id="viewport"></canvas>
+      <div id="pause-overlay">PAUSED</div>
+      <section class="footer">
+        <div class="info">
+          <h1>Cytosis</h1>
+          <h3>By: David Janas</h3>
+        </div>
+        <div class="links">
+          <a href="http://david-janas.com"><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
+          <a href="http://github.com/drj17/cytosis"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/in/david-janas-661325125/"><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></a>
+        </div>
+      </section>
+    </div>
     <script src="lib/bundle.js" charset="utf-8"></script>
 
   </body>

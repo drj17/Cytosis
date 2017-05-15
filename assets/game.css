@@ -1,7 +1,12 @@
 #viewport {
   background: url('./background.jpg');
   width: 1400px;
+  /*position: absolute;*/
+}
+
+#canvas-container {
   margin: auto;
+  position: relative;
 }
 
 body {
@@ -9,6 +14,7 @@ body {
   font-family: sans-serif;
   flex-direction: column;
   background: radial-gradient(#4FEDFE, #0C3C7E);
+  position: relative;
 }
 
 body h1 {
@@ -26,7 +32,7 @@ body h1 {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  width: 80%;
+  width: 100%;
   margin: auto;
 }
 
@@ -130,4 +136,20 @@ a {
 
 #end-modal {
   display: none;
+}
+
+#pause-overlay {
+  display: none;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 1400px;
+  height: 700px;
+  overflow: auto;
+  pointer-events: none;
+  color: white;
+  font-size: 40px;
+  text-align: center;
 }
